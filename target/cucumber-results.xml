@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="6.408" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-11-01T19:34:50.484106Z">
+<testcase classname="Tutorial Homepage" name="Element validation" time="6.33">
+<system-out><![CDATA[
+Given User input URL in browser address bar.................................passed
+And User waits for Homepage to load.........................................passed
+Then User is shown Title as "Selenium Practice - Browser Windows"...........passed
+And User enter user details as "TestFName" "TestEmail" "TestAddress"........passed
+And User select checkbox "2"................................................passed
+And User select radio button "igottwo"......................................passed
+And User click on "Double Click Me".........................................passed
+And User click link on "HomewPWPU"..........................................passed
+And User closes the page....................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
