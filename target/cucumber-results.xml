@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="6.408" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-11-01T19:34:50.484106Z">
-<testcase classname="Tutorial Homepage" name="Element validation" time="6.33">
+<testsuite name="Cucumber" time="3.488" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-11-08T17:01:00.916729Z">
+<testcase classname="Tutorial Homepage" name="Element validation" time="3.402">
 <system-out><![CDATA[
 Given User input URL in browser address bar.................................passed
 And User waits for Homepage to load.........................................passed

@@ -7,9 +7,11 @@ import org.junit.Assert;
 import org.junit.Assert.*;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,12 +19,18 @@ import java.time.Duration;
 import java.util.List;
 
 public class homePage_Steps {
+    ChromeOptions cOptions;
     WebDriver driver;
     WebElement menu;
     List<WebElement> menuList;
 
     public homePage_Steps() {
-        driver = new ChromeDriver();
+        cOptions = new ChromeOptions();
+        cOptions.addArguments("--headless=new");
+        //cOptions.addArguments("start-maximised");
+
+        driver = new ChromeDriver(cOptions);
+        driver.manage().window().setSize(new Dimension(1440, 900));
     }
 
     @Given("User input URL in browser address bar")
@@ -64,6 +72,8 @@ public class homePage_Steps {
         List<WebElement> checkboxList;
         WebElement menu;
         List<WebElement> menuList;
+
+        user_waits_for_homepage_to_load();
 
         driver.findElement(By.id("headingOne")).click();
         menu = driver.findElement(By.id("collapseOne"));
