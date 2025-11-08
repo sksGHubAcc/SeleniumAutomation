@@ -9,8 +9,9 @@ jobs:
       - name: setup jdk
         uses: actions/setup-java@v5.0.0
         with: 
-          java-version: '24'
-          distribution: 'jetbrains'
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
       - name: build with maven
         run: mvn -B package --file pom.xml
   test:
