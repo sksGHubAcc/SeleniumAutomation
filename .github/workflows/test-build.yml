@@ -12,6 +12,10 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: 'maven'
+      - name: setup chrome browser
+        uses: browser actions/setup-chrome@v2
+        with:
+          install-chromedriver: true     
       - name: build with maven
         run: mvn -B package --file pom.xml
   test:
@@ -25,7 +29,6 @@ jobs:
         uses: browser actions/setup-chrome@v2
         with:
           install-chromedriver: true
-            
       - name: test with maven
         run: mvn clean test
             
