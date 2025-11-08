@@ -1,0 +1,31 @@
+name: test build
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout-repo
+        uses: actions/checkout@v1
+      - name: setup jdk
+        uses: actions/setup-java@v5.0.0
+        with: 
+          java-version: '11'
+          distribution: 'temurin'
+          cache: 'maven'    
+      - name: build with maven
+        run: mvn -B package --file pom.xml
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout-repo
+        uses: actions/checkout@v1
+      - name: setup jdk
+        uses: actions/setup-java@v5.0.0
+      - name: setup chrome browser
+        uses: browser actions/setup-chrome@v2
+        with:
+          install-chromedriver: true
+      - name: test with maven
+        run: mvn clean test
+            
+          
